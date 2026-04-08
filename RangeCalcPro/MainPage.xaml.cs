@@ -34,7 +34,22 @@
                 return -(1.0 + log);
             }
         }
+        /*public static double CalculateRank(double capital)
+        {
+            const double B = 32000.0;
+            const double A = 6.25;
+            const double alpha = A - 1.0; // = 5.25
 
+            // Для любых C > -B/alpha (т.е. C > -6095.24) формула работает
+            double ratio = capital / B;
+            double value = 1.0 + ratio * alpha;
+            if (value <= 0.0)
+            {
+                // Для очень глубоких долгов используем симметрию (редкий случай)
+                return -CalculateRank(-capital);
+            }
+            return Math.Log(value) / Math.Log(A);
+        }*/
         private void OnCounterClicked(object? sender, EventArgs e)
         {
             if (int.TryParse(InitialCountEntry.Text, out int enteredValue))
