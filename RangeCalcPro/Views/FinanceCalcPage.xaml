@@ -9,7 +9,9 @@
         <Button x:Name="AddButton" 
                 Grid.Row="0" 
                 Text="➕ Добавить строку" 
-                Clicked="OnAddItemClicked" />
+                Clicked="OnAddItemClicked"                 
+                WidthRequest="200"
+                HorizontalOptions="Start" />
 
         <!-- ДОБАВЛЯЕМ ItemsSource -->
         <CollectionView Grid.Row="1" 
