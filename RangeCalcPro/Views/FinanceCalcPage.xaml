@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:RangeCalcPro"
+             x:Class="RangeCalcPro.FinanceCalcPage"
+             Title="Финансовый калькулятор">
+    <Grid RowDefinitions="Auto,*,Auto">
+        <Button Grid.Row="0" Text="➕ Добавить строку" Clicked="OnAddItemClicked" />
+
+        <CollectionView Grid.Row="1" x:Name="ItemsCollectionView">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <HorizontalStackLayout Spacing="10" Padding="5">
+                        <Entry Text="{Binding Name}" Placeholder="Название" WidthRequest="120" />
+                        <Entry Text="{Binding Amount, StringFormat='{0:F2}'}" 
+                               Placeholder="Сумма" Keyboard="Numeric" WidthRequest="100" />
+                        <Button Text="❌" 
+                                Command="{Binding Source={RelativeSource AncestorType={x:Type local:FinanceCalcPage}}, Path=DeleteCommand}" 
+                                CommandParameter="{Binding .}" />
+                    </HorizontalStackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <VerticalStackLayout Grid.Row="2" Padding="10" Spacing="5">
+            <Label x:Name="TotalAmountLabel" Text="Сумма: 0,00 ₽" FontAttributes="Bold" />
+            <Label x:Name="TotalRankLabel" Text="Ранг: 0,00" />
+        </VerticalStackLayout>
+    </Grid>
+</ContentPage>

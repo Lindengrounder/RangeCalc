@@ -10,5 +10,10 @@
         Title="Калькулятор рангов"
         ContentTemplate="{DataTemplate local:MainPage}"
         Route="MainPage" />
+    
+    <ShellContent 
+        Title="Финансовый список" 
+        ContentTemplate="{DataTemplate local:FinanceCalcPage}" 
+        Route="FinanceCalcPage"/>
 
 </Shell>
