@@ -44,10 +44,10 @@
             count = CalculateRank(count);
 
             //if (count == 1)
-            if (Math.Abs(count - 1.0) < 1e-6)
-                CounterBtn.Text = $"Ранг: {count:F2}";
-            else
-                CounterBtn.Text = $"Значение: {count:F2}";
+            //if (Math.Abs(count - 1.0) < 1e-6)
+            CounterBtn.Text = $"Ранг: {count:F2}";
+            //else
+            //    CounterBtn.Text = $"Значение: {count:F2}";
 
             SemanticScreenReader.Announce(CounterBtn.Text);
         }

@@ -8,6 +8,10 @@
         <VerticalStackLayout
             Padding="30,0"
             Spacing="25">
+            <Label
+                Text="Калькулятор рангов"
+                Style="{StaticResource Headline}"
+                SemanticProperties.HeadingLevel="Level1" />
             <!--Image
                 Source="dotnet_bot.png"
                 HeightRequest="200"
@@ -16,8 +20,8 @@
 
             <Label
                 Text="Введите сумму ваших средств и активов"
-                Style="{StaticResource Headline}"
-                SemanticProperties.HeadingLevel="Level1" />
+                Style="{StaticResource SubHeadline}"
+                SemanticProperties.HeadingLevel="Level2" />
             
             <Entry x:Name="InitialCountEntry" 
                 Placeholder="Число"
@@ -29,13 +33,11 @@
             <Label
                 Text="Ваш ранг:"
                 Style="{StaticResource SubHeadline}"
-                SemanticProperties.HeadingLevel="Level2"
-                SemanticProperties.Description="Welcome to dot net Multi platform App U I" />
+                SemanticProperties.HeadingLevel="Level2" />
 
             <Button
                 x:Name="CounterBtn"
-                Text="Click me" 
-                SemanticProperties.Hint="Counts the number of times you click"
+                Text="Нажмите" 
                 Clicked="OnCounterClicked"
                 WidthRequest="200"
                 HorizontalOptions="Center" />
