@@ -7,7 +7,7 @@
     Title="RangeCalcPro">
 
     <ShellContent
-        Title="Home"
+        Title="Калькулятор рангов"
         ContentTemplate="{DataTemplate local:MainPage}"
         Route="MainPage" />
 
