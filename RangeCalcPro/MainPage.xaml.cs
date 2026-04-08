@@ -9,62 +9,6 @@
             InitializeComponent();
         }
 
-        /*public static double CalculateRank(double capital)
-        {
-            const double B = 32000.0;   // базовая сумма
-            const double A = 6.25;      // основание логарифма
-
-            if (capital == 0.0)
-                return 0.0;
-
-            double absCapital = Math.Abs(capital);
-            double ratio = absCapital / B;
-
-            // Логарифм по основанию A: log_A(ratio) = ln(ratio) / ln(A)
-            double log = Math.Log(ratio) / Math.Log(A);
-
-            if (capital > 0)
-            {
-                // Положительный капитал: ранг = 1 + log_A(C/B)
-                return 1.0 + log;
-            }
-            else
-            {
-                // Отрицательный капитал (долг): ранг = - (1 + log_A(|C|/B))
-                return -(1.0 + log);
-            }
-        }*/
-
-        /*public static double CalculateRank(double capital)
-        {
-            const double B = 32000.0;
-            const double A = 6.25;
-            const double alpha = A - 1.0; // = 5.25
-
-            // Для любых C > -B/alpha (т.е. C > -6095.24) формула работает
-            double ratio = capital / B;
-            double value = 1.0 + ratio * alpha;
-            if (value <= 0.0)
-            {
-                // Для очень глубоких долгов используем симметрию (редкий случай)
-                return -CalculateRank(-capital);
-            }
-            return Math.Log(value) / Math.Log(A);
-        }*/
-        /*public static double CalculateRank(double capital)
-        {
-            const double B = 32000.0;      // базовая сумма
-            const double a = 5.25;         // основание (получено из условий)
-            const double k = (a - 1) / B;  // = 4.25 / 32000 = 0.0001328125
-
-            if (capital == 0.0) return 0.0;
-
-            double absCapital = Math.Abs(capital);
-            double value = 1.0 + k * absCapital;   // всегда > 1 для любого ненулевого C
-            double log = Math.Log(value) / Math.Log(a);
-
-            return capital > 0 ? log : -log;
-        }*/
         public static double CalculateRank(double capital)
         {
             const double B = 32000.0;    // база
@@ -88,21 +32,22 @@
         }
         private void OnCounterClicked(object? sender, EventArgs e)
         {
-            if (int.TryParse(InitialCountEntry.Text, out int enteredValue))
+            if (double.TryParse(InitialCountEntry.Text, out double enteredValue))
             {
                 count = enteredValue;
                 SemanticScreenReader.Announce($"Count установлен в {count}");
             }
             else
             {
-                DisplayAlert("Ошибка", "Введите целое число", "OK");
+                DisplayAlert("Ошибка", "Введите целое или дробное число", "OK");
             }
             count = CalculateRank(count);
 
-            if (count == 1)
-                CounterBtn.Text = $"Clicked {count} time";
+            //if (count == 1)
+            if (Math.Abs(count - 1.0) < 1e-6)
+                CounterBtn.Text = $"Ранг: {count:F2}";
             else
-                CounterBtn.Text = $"Clicked {count} times";
+                CounterBtn.Text = $"Значение: {count:F2}";
 
             SemanticScreenReader.Announce(CounterBtn.Text);
         }
