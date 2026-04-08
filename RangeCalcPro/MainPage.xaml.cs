@@ -9,7 +9,7 @@
             InitializeComponent();
         }
 
-        public static double CalculateRank(double capital)
+        /*public static double CalculateRank(double capital)
         {
             const double B = 32000.0;   // базовая сумма
             const double A = 6.25;      // основание логарифма
@@ -33,7 +33,8 @@
                 // Отрицательный капитал (долг): ранг = - (1 + log_A(|C|/B))
                 return -(1.0 + log);
             }
-        }
+        }*/
+
         /*public static double CalculateRank(double capital)
         {
             const double B = 32000.0;
@@ -50,6 +51,41 @@
             }
             return Math.Log(value) / Math.Log(A);
         }*/
+        /*public static double CalculateRank(double capital)
+        {
+            const double B = 32000.0;      // базовая сумма
+            const double a = 5.25;         // основание (получено из условий)
+            const double k = (a - 1) / B;  // = 4.25 / 32000 = 0.0001328125
+
+            if (capital == 0.0) return 0.0;
+
+            double absCapital = Math.Abs(capital);
+            double value = 1.0 + k * absCapital;   // всегда > 1 для любого ненулевого C
+            double log = Math.Log(value) / Math.Log(a);
+
+            return capital > 0 ? log : -log;
+        }*/
+        public static double CalculateRank(double capital)
+        {
+            const double B = 32000.0;    // база
+            const double A = 6.25;       // основание логарифма
+
+            double absC = Math.Abs(capital);
+            double rank;
+
+            if (absC <= B)
+            {
+                // Линейный участок от 0 до B
+                rank = absC / B;
+            }
+            else
+            {
+                // Логарифмический участок для больших сумм
+                rank = 1.0 + Math.Log(absC / B) / Math.Log(A);
+            }
+
+            return capital >= 0 ? rank : -rank;
+        }
         private void OnCounterClicked(object? sender, EventArgs e)
         {
             if (int.TryParse(InitialCountEntry.Text, out int enteredValue))
