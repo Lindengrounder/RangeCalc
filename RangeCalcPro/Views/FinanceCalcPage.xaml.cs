@@ -2,6 +2,8 @@ using System.Collections.ObjectModel;
 using System.Text.Json;
 using System.Windows.Input;
 using Microsoft.Maui.Controls;
+using System.Text;
+using System.IO;
 
 namespace RangeCalcPro
 {
@@ -66,7 +68,37 @@ namespace RangeCalcPro
                 }
             }
         }
+        private async void OnSaveToFileClicked(object sender, EventArgs e)
+        {
+            // 1. Получаем актуальные данные
+            var total = Items.Sum(i => i.Amount);
+            var rank = CalculateRank(total);
 
+            // 2. Формируем CSV-содержимое
+            var csvContent = new StringBuilder();
+            csvContent.AppendLine("Название;Сумма");
+            foreach (var item in Items)
+            {
+                csvContent.AppendLine($"{item.Name};{item.Amount}");
+            }
+            csvContent.AppendLine($"ИТОГО;{total}");
+            csvContent.AppendLine($"РАНГ;{rank}");
+
+            // 3. Сохраняем в файл во внутреннюю папку приложения
+            var directoryPath = FileSystem.AppDataDirectory;
+            var fileName = $"finance_report_{DateTime.Now:yyyy-MM-dd_HH-mm-ss}.csv";
+            var fullPath = Path.Combine(directoryPath, fileName);
+
+            try
+            {
+                await File.WriteAllTextAsync(fullPath, csvContent.ToString(), Encoding.UTF8);
+                await DisplayAlert("Успех", $"Файл сохранён в папку приложения:\n{fullPath}", "OK");
+            }
+            catch (Exception ex)
+            {
+                await DisplayAlert("Ошибка", $"Не удалось сохранить файл: {ex.Message}", "OK");
+            }
+        }
         private double CalculateRank(double capital)
         {
             const double B = 32000.0;
