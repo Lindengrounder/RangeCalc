@@ -13,6 +13,7 @@ namespace RangeCalcPro
         public FinanceCalcPage()
         {
             InitializeComponent();
+            //AddButton.Clicked += OnAddItemClicked;
             Items = new ObservableCollection<FinancialItem>();
             DeleteCommand = new Command<FinancialItem>(OnDeleteItem);
             BindingContext = this;
@@ -23,6 +24,7 @@ namespace RangeCalcPro
 
         private void OnAddItemClicked(object sender, EventArgs e)
         {
+            //DisplayAlert("Тест", "Кнопка сработала", "OK");
             Items.Add(new FinancialItem { Id = Guid.NewGuid().ToString(), Name = "", Amount = 0 });
             SaveData();
         }

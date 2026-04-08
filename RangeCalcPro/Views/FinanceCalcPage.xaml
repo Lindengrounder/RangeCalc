@@ -5,9 +5,16 @@
              x:Class="RangeCalcPro.FinanceCalcPage"
              Title="Финансовый калькулятор">
     <Grid RowDefinitions="Auto,*,Auto">
-        <Button Grid.Row="0" Text="➕ Добавить строку" Clicked="OnAddItemClicked" />
+        <!-- Оставляем только Clicked в XAML, подписка в коде НЕ нужна -->
+        <Button x:Name="AddButton" 
+                Grid.Row="0" 
+                Text="➕ Добавить строку" 
+                Clicked="OnAddItemClicked" />
 
-        <CollectionView Grid.Row="1" x:Name="ItemsCollectionView">
+        <!-- ДОБАВЛЯЕМ ItemsSource -->
+        <CollectionView Grid.Row="1" 
+                        x:Name="ItemsCollectionView" 
+                        ItemsSource="{Binding Items}">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
                     <HorizontalStackLayout Spacing="10" Padding="5">
