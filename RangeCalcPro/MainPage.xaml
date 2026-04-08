@@ -7,11 +7,11 @@
         <VerticalStackLayout
             Padding="30,0"
             Spacing="25">
-            <Image
+            <!--Image
                 Source="dotnet_bot.png"
-                HeightRequest="185"
+                HeightRequest="200"
                 Aspect="AspectFit"
-                SemanticProperties.Description="dot net bot in a submarine number ten" />
+                SemanticProperties.Description="dot net bot in a submarine number ten" /-->
 
             <Label
                 Text="Введите сумму ваших средств и активов"
@@ -21,7 +21,9 @@
             <Entry x:Name="InitialCountEntry" 
                 Placeholder="Число"
                 Keyboard="Numeric"
-                Text="1" />
+                Text="0,00" 
+                WidthRequest="200"
+                HorizontalOptions="Center" />
 
             <Label
                 Text="Ваш ранг:"
@@ -34,7 +36,8 @@
                 Text="Click me" 
                 SemanticProperties.Hint="Counts the number of times you click"
                 Clicked="OnCounterClicked"
-                HorizontalOptions="Fill" />
+                WidthRequest="200"
+                HorizontalOptions="Center" />
         </VerticalStackLayout>
     </ScrollView>
 
