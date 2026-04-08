@@ -21,6 +21,10 @@ namespace RangeCalcPro
             UpdateTotals();
             Items.CollectionChanged += (s, e) => UpdateTotals();
         }
+        private void OnCalculateClicked(object sender, EventArgs e)
+        {
+            UpdateTotals();
+        }
 
         private void OnAddItemClicked(object sender, EventArgs e)
         {

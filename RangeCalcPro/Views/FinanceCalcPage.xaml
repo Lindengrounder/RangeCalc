@@ -3,15 +3,15 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:RangeCalcPro"
              x:Class="RangeCalcPro.FinanceCalcPage"
-             Title="Финансовый калькулятор">
+             Title="Финансовый подсчёт">
     <Grid RowDefinitions="Auto,*,Auto">
         <!-- Оставляем только Clicked в XAML, подписка в коде НЕ нужна -->
         <Button x:Name="AddButton" 
                 Grid.Row="0" 
-                Text="➕ Добавить строку" 
+                Text="Добавить строку" 
                 Clicked="OnAddItemClicked"                 
                 WidthRequest="200"
-                HorizontalOptions="Start" />
+                HorizontalOptions="Center" />
 
         <!-- ДОБАВЛЯЕМ ItemsSource -->
         <CollectionView Grid.Row="1" 
@@ -19,11 +19,11 @@
                         ItemsSource="{Binding Items}">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <HorizontalStackLayout Spacing="10" Padding="5">
-                        <Entry Text="{Binding Name}" Placeholder="Название" WidthRequest="120" />
-                        <Entry Text="{Binding Amount, StringFormat='{0:F2}'}" 
-                               Placeholder="Сумма" Keyboard="Numeric" WidthRequest="100" />
-                        <Button Text="❌" 
+                    <HorizontalStackLayout Spacing="10" Padding="15">
+                        <Entry Text="{Binding Amount, StringFormat='{}'}" 
+                                Placeholder="Сумма" Keyboard="Numeric" WidthRequest="100" />
+                        <Entry Text="{Binding Name}" Placeholder="Название" WidthRequest="250" />
+                        <Button Text="удалить" 
                                 Command="{Binding Source={RelativeSource AncestorType={x:Type local:FinanceCalcPage}}, Path=DeleteCommand}" 
                                 CommandParameter="{Binding .}" />
                     </HorizontalStackLayout>
@@ -31,7 +31,11 @@
             </CollectionView.ItemTemplate>
         </CollectionView>
 
-        <VerticalStackLayout Grid.Row="2" Padding="10" Spacing="5">
+        <VerticalStackLayout Grid.Row="2" Padding="15" Spacing="5">
+            <Button Text="Рассчитать итог" 
+                    Clicked="OnCalculateClicked" 
+                    WidthRequest="200" 
+                    HorizontalOptions="Center" />
             <Label x:Name="TotalAmountLabel" Text="Сумма: 0,00 ₽" FontAttributes="Bold" />
             <Label x:Name="TotalRankLabel" Text="Ранг: 0,00" />
         </VerticalStackLayout>
