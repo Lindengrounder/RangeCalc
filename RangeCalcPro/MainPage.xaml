@@ -26,7 +26,7 @@
             <Entry x:Name="InitialCountEntry" 
                 Placeholder="Число"
                 Keyboard="Numeric"
-                Text="0,00" 
+                Text="" 
                 WidthRequest="200"
                 HorizontalOptions="Center" />
 
@@ -41,6 +41,12 @@
                 Clicked="OnCounterClicked"
                 WidthRequest="200"
                 HorizontalOptions="Center" />
+
+            <Label x:Name="RankLabel" 
+                Text=""
+                FontSize="24"
+                HorizontalOptions="Center"
+                Margin="0,20,0,0" />
         </VerticalStackLayout>
     </ScrollView>
 

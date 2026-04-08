@@ -43,9 +43,19 @@
             }
             count = CalculateRank(count);
 
+            if (double.TryParse(InitialCountEntry.Text, out double enteredValue2))
+            {
+                double rank = CalculateRank(enteredValue2);
+                RankLabel.Text = $"Ранг: {rank:F2}";   // отображаем под кнопкой
+            }
+            else
+            {
+                DisplayAlert("Ошибка", "Введите число", "OK");
+            }
+
             //if (count == 1)
             //if (Math.Abs(count - 1.0) < 1e-6)
-            CounterBtn.Text = $"Ранг: {count:F2}";
+            CounterBtn.Text = $"Ранг: {count:F6}";
             //else
             //    CounterBtn.Text = $"Значение: {count:F2}";
 
