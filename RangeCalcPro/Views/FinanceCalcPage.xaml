@@ -5,7 +5,6 @@
              x:Class="RangeCalcPro.FinanceCalcPage"
              Title="Финансовый подсчёт">
     <Grid RowDefinitions="Auto,*,Auto">
-        <!-- Оставляем только Clicked в XAML, подписка в коде НЕ нужна -->
         <Button x:Name="AddButton" 
                 Grid.Row="0" 
                 Text="Добавить строку" 
@@ -13,20 +12,29 @@
                 WidthRequest="200"
                 HorizontalOptions="Center" />
 
-        <!-- ДОБАВЛЯЕМ ItemsSource -->
         <CollectionView Grid.Row="1" 
                         x:Name="ItemsCollectionView" 
                         ItemsSource="{Binding Items}">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <HorizontalStackLayout Spacing="10" Padding="15">
-                        <Entry Text="{Binding Amount, StringFormat='{}'}" 
-                                Placeholder="Сумма" Keyboard="Numeric" WidthRequest="100" />
-                        <Entry Text="{Binding Name}" Placeholder="Название" WidthRequest="250" />
-                        <Button Text="удалить" 
+                    <Grid ColumnDefinitions="Auto,*,Auto" 
+                          ColumnSpacing="5" 
+                          Padding="10,5">
+                        <Entry Grid.Column="0" 
+                               Text="{Binding Amount, StringFormat='{}'}" 
+                               Placeholder="Сумма" 
+                               Keyboard="Numeric" 
+                               WidthRequest="100" />
+                        <Entry Grid.Column="1" 
+                               Text="{Binding Name}" 
+                               Placeholder="Название" />
+                        <Button Grid.Column="2" 
+                                Text="X" 
                                 Command="{Binding Source={RelativeSource AncestorType={x:Type local:FinanceCalcPage}}, Path=DeleteCommand}" 
-                                CommandParameter="{Binding .}" />
-                    </HorizontalStackLayout>
+                                CommandParameter="{Binding .}" 
+                                WidthRequest="50" 
+                                HeightRequest="40" />
+                    </Grid>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
@@ -36,6 +44,11 @@
                     Clicked="OnCalculateClicked" 
                     WidthRequest="200" 
                     HorizontalOptions="Center" />
+            <!--Button Text="Сохранить в файл" 
+                    Clicked="OnSaveToFileClicked" 
+                    WidthRequest="200" 
+                    HorizontalOptions="Center" 
+                    Margin="0,10,0,0" /-->
             <Label x:Name="TotalAmountLabel" Text="Сумма: 0,00 ₽" FontAttributes="Bold" />
             <Label x:Name="TotalRankLabel" Text="Ранг: 0,00" />
         </VerticalStackLayout>
