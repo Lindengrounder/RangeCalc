@@ -2,52 +2,49 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="RangeCalcPro.MainPage"
-             Shell.NavBarIsVisible="False">
+             Shell.NavBarIsVisible="False"
+             Title="Калькулятор рангов">
 
-    <ScrollView>
-        <VerticalStackLayout
-            Padding="30,0"
-            Spacing="25">
-            <Label
-                Text="Калькулятор рангов"
-                Style="{StaticResource Headline}"
-                SemanticProperties.HeadingLevel="Level1" />
-            <!--Image
-                Source="dotnet_bot.png"
-                HeightRequest="200"
-                Aspect="AspectFit"
-                SemanticProperties.Description="dot net bot in a submarine number ten" /-->
+    <Grid RowDefinitions="Auto,Auto,*,Auto" Padding="20" RowSpacing="15">
+        <!-- Заголовок -->
+        <Label Grid.Row="0"
+               Text="Калькулятор рангов"
+               Style="{StaticResource Headline}"
+               HorizontalOptions="Center" />
 
-            <Label
-                Text="Введите сумму ваших средств и активов"
-                Style="{StaticResource SubHeadline}"
-                SemanticProperties.HeadingLevel="Level2" />
-            
-            <Entry x:Name="InitialCountEntry" 
-                Placeholder="Число"
-                Keyboard="Numeric"
-                Text="" 
-                WidthRequest="200"
-                HorizontalOptions="Center" />
+        <!-- Подзаголовок -->
+        <Label Grid.Row="1"
+               Text="Введите сумму ваших средств и активов"
+               Style="{StaticResource SubHeadline}"
+               HorizontalOptions="Center" />
 
-            <Label
-                Text="Ваш ранг:"
-                Style="{StaticResource SubHeadline}"
-                SemanticProperties.HeadingLevel="Level2" />
+        <!-- Поле ввода и кнопка -->
+        <VerticalStackLayout Grid.Row="2" Spacing="20" VerticalOptions="Center">
+            <Entry x:Name="InitialCountEntry"
+                   Placeholder="Число"
+                   Keyboard="Numeric"
+                   Text=""
+                   HorizontalOptions="Fill"
+                   BackgroundColor="LightGray"
+                   TextColor="Black" />
 
-            <Button
-                x:Name="CounterBtn"
-                Text="Нажмите" 
-                Clicked="OnCounterClicked"
-                WidthRequest="200"
-                HorizontalOptions="Center" />
+            <Button x:Name="CounterBtn"
+                    Text="Рассчитать ранг"
+                    Clicked="OnCounterClicked"
+                    HorizontalOptions="Center" />
 
-            <Label x:Name="RankLabel" 
-                Text=""
-                FontSize="24"
-                HorizontalOptions="Center"
-                Margin="0,20,0,0" />
+            <Button Text="Очистить"
+                    Clicked="OnClearClicked"
+                    HorizontalOptions="Center"
+                    BackgroundColor="Gray" />
         </VerticalStackLayout>
-    </ScrollView>
 
+        <!-- Результат -->
+        <Label Grid.Row="3"
+               x:Name="RankLabel"
+               Text=""
+               FontSize="24"
+               HorizontalOptions="Center"
+               FontAttributes="Bold" />
+    </Grid>
 </ContentPage>

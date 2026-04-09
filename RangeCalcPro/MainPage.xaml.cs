@@ -30,6 +30,11 @@
 
             return capital >= 0 ? rank : -rank;
         }
+        private void OnClearClicked(object sender, EventArgs e)
+        {
+            InitialCountEntry.Text = string.Empty;
+            RankLabel.Text = string.Empty;
+        }
         private void OnCounterClicked(object? sender, EventArgs e)
         {
             if (double.TryParse(InitialCountEntry.Text, out double enteredValue))
