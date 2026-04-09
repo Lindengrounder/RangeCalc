@@ -1,9 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<color name="colorPrimary">#E63946</color>
-	<!-- красный -->
-	<color name="colorPrimaryDark">#9B2C2C</color>
-	<!-- бордовый -->
-	<color name="colorAccent">#F4A261</color>
-	<!-- оранжевый -->
+	<!-- Основные акцентные цвета (согласованы с оливково-бежевой темой) -->
+	<color name="colorPrimary">#6B7F59</color>
+	<!-- приглушённый оливково-зелёный -->
+	<color name="colorPrimaryDark">#4A5A3C</color>
+	<!-- тёмный оливковый -->
+	<color name="colorAccent">#B9B0A3</color>
+	<!-- тёплый серо-бежевый (акцент) -->
+
+	<!-- Дополнительные цвета для полной совместимости (опционально) -->
+	<color name="colorPrimaryLight">#8FA37A</color>
+	<!-- светлый оливковый для наведений -->
+	<color name="colorTextPrimary">#241F1A</color>
+	<!-- тёмный текст -->
+	<color name="colorTextSecondary">#71675C</color>
+	<!-- второстепенный текст -->
+	<color name="colorBackground">#F9F6F0</color>
+	<!-- основной фон -->
+	<color name="colorSurface">#FFFFFF</color>
+	<!-- поверхность (карточки) -->
+	<color name="colorError">#C26B5C</color>
+	<!-- приглушённый терракотовый для ошибок -->
 </resources>

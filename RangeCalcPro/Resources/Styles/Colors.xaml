@@ -2,42 +2,42 @@
 <ResourceDictionary 
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
-    <!-- Note: For Android please see also Platforms\Android\Resources\values\colors.xml -->
+
     <!-- Основные акцентные цвета -->
-    <Color x:Key="Primary">#E63946</Color>
-    <!-- красный -->
-    <Color x:Key="PrimaryDark">#9B2C2C</Color>
-    <!-- бордовый -->
-    <Color x:Key="PrimaryDarkText">#F4A261</Color>
-    <!-- оранжевый для текста на тёмном -->
-    <Color x:Key="Secondary">#C2185B</Color>
-    <!-- малиновый -->
-    <Color x:Key="SecondaryDarkText">#E76F51</Color>
-    <!-- светло-оранжевый -->
-    <Color x:Key="Tertiary">#F4A261</Color>
-    <!-- оранжевый -->
+    <Color x:Key="Primary">#6B7F59</Color>
+    <!-- приглушённый оливково-зелёный -->
+    <Color x:Key="PrimaryDark">#4A5A3C</Color>
+    <!-- тёмный оливковый -->
+    <Color x:Key="PrimaryDarkText">#C5CFB8</Color>
+    <!-- светлый бежево-зелёный для текста на тёмном -->
+    <Color x:Key="Secondary">#B9B0A3</Color>
+    <!-- тёплый серо-бежевый -->
+    <Color x:Key="SecondaryDarkText">#DED6CC</Color>
+    <!-- очень светлый бежевый для второстепенного текста -->
+    <Color x:Key="Tertiary">#EFEAE2</Color>
+    <!-- светлый тёплый серый для фона -->
 
     <!-- Базовые цвета -->
     <Color x:Key="White">#FFFFFF</Color>
-    <Color x:Key="Black">#000000</Color>
-    <Color x:Key="Magenta">#D600AA</Color>
-    <!-- оставлен, но не используется -->
-    <Color x:Key="MidnightBlue">#5D1A1A</Color>
-    <!-- тёмно-бордовый (был синий) -->
-    <Color x:Key="OffBlack">#3A0E0E</Color>
-    <!-- очень тёмный красный -->
+    <Color x:Key="Black">#241F1A</Color>
+    <Color x:Key="Magenta">#A67C6B</Color>
+    <!-- тёплый терракотовый (замена малиновому) -->
+    <Color x:Key="MidnightBlue">#3A332C</Color>
+    <!-- тёмный шоколадный вместо синего -->
+    <Color x:Key="OffBlack">#2A241E</Color>
+    <!-- почти чёрный тёплый оттенок -->
 
-    <!-- Оттенки серого (теплее, с лёгким красным подтоном) -->
-    <Color x:Key="Gray100">#FCE4E4</Color>
-    <Color x:Key="Gray200">#F5C6C6</Color>
-    <Color x:Key="Gray300">#E8A0A0</Color>
-    <Color x:Key="Gray400">#D47B7B</Color>
-    <Color x:Key="Gray500">#B85C5C</Color>
-    <Color x:Key="Gray600">#9A4242</Color>
-    <Color x:Key="Gray900">#4A1E1E</Color>
-    <Color x:Key="Gray950">#2E1212</Color>
+    <!-- Оттенки серого (тёплые, с бежевым подтоном) -->
+    <Color x:Key="Gray100">#F9F6F0</Color>
+    <Color x:Key="Gray200">#EFEAE2</Color>
+    <Color x:Key="Gray300">#DCD5CC</Color>
+    <Color x:Key="Gray400">#B8ADA1</Color>
+    <Color x:Key="Gray500">#968B7F</Color>
+    <Color x:Key="Gray600">#71675C</Color>
+    <Color x:Key="Gray900">#241F1A</Color>
+    <Color x:Key="Gray950">#16120E</Color>
 
-    <!-- Кисти для совместимости -->
+    <!-- Кисти -->
     <SolidColorBrush x:Key="PrimaryBrush" Color="{StaticResource Primary}"/>
     <SolidColorBrush x:Key="SecondaryBrush" Color="{StaticResource Secondary}"/>
     <SolidColorBrush x:Key="TertiaryBrush" Color="{StaticResource Tertiary}"/>
