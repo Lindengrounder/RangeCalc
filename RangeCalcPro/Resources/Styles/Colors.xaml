@@ -4,40 +4,40 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
 
     <!-- Основные акцентные цвета -->
-    <Color x:Key="Primary">#2C6E9E</Color>
-    <!-- приглушённый синий -->
-    <Color x:Key="PrimaryDark">#1E4A6B</Color>
-    <!-- тёмно-синий -->
-    <Color x:Key="PrimaryDarkText">#8BA9C5</Color>
-    <!-- светлый сине-серый для текста на тёмном фоне -->
-    <Color x:Key="Secondary">#5FA8D3</Color>
-    <!-- светло-синий акцент -->
-    <Color x:Key="SecondaryDarkText">#A0C4E2</Color>
-    <!-- ещё более светлый для второстепенного текста -->
-    <Color x:Key="Tertiary">#E9ECF0</Color>
-    <!-- очень светлый серо-синий для фона/рамок -->
+    <Color x:Key="Primary">#6B7F59</Color>
+    <!-- приглушённый оливково-зелёный -->
+    <Color x:Key="PrimaryDark">#4A5A3C</Color>
+    <!-- тёмный оливковый -->
+    <Color x:Key="PrimaryDarkText">#C5CFB8</Color>
+    <!-- светлый бежево-зелёный для текста на тёмном -->
+    <Color x:Key="Secondary">#B9B0A3</Color>
+    <!-- тёплый серо-бежевый -->
+    <Color x:Key="SecondaryDarkText">#DED6CC</Color>
+    <!-- очень светлый бежевый для второстепенного текста -->
+    <Color x:Key="Tertiary">#EFEAE2</Color>
+    <!-- светлый тёплый серый для фона -->
 
     <!-- Базовые цвета -->
     <Color x:Key="White">#FFFFFF</Color>
-    <Color x:Key="Black">#101828</Color>
-    <Color x:Key="Magenta">#B5478C</Color>
-    <!-- приглушённый розовый для редких акцентов -->
-    <Color x:Key="MidnightBlue">#1E2A3A</Color>
-    <!-- глубокий тёмно-синий -->
-    <Color x:Key="OffBlack">#1D2939</Color>
-    <!-- почти чёрный с синим отливом -->
+    <Color x:Key="Black">#241F1A</Color>
+    <Color x:Key="Magenta">#A67C6B</Color>
+    <!-- тёплый терракотовый (замена малиновому) -->
+    <Color x:Key="MidnightBlue">#3A332C</Color>
+    <!-- тёмный шоколадный вместо синего -->
+    <Color x:Key="OffBlack">#2A241E</Color>
+    <!-- почти чёрный тёплый оттенок -->
 
-    <!-- Оттенки серого (холодные, чистые) -->
-    <Color x:Key="Gray100">#F5F7FA</Color>
-    <Color x:Key="Gray200">#E9ECF0</Color>
-    <Color x:Key="Gray300">#D0D5DD</Color>
-    <Color x:Key="Gray400">#98A2B3</Color>
-    <Color x:Key="Gray500">#667085</Color>
-    <Color x:Key="Gray600">#475467</Color>
-    <Color x:Key="Gray900">#101828</Color>
-    <Color x:Key="Gray950">#0C111D</Color>
+    <!-- Оттенки серого (тёплые, с бежевым подтоном) -->
+    <Color x:Key="Gray100">#F9F6F0</Color>
+    <Color x:Key="Gray200">#EFEAE2</Color>
+    <Color x:Key="Gray300">#DCD5CC</Color>
+    <Color x:Key="Gray400">#B8ADA1</Color>
+    <Color x:Key="Gray500">#968B7F</Color>
+    <Color x:Key="Gray600">#71675C</Color>
+    <Color x:Key="Gray900">#241F1A</Color>
+    <Color x:Key="Gray950">#16120E</Color>
 
-    <!-- Кисти для совместимости -->
+    <!-- Кисти -->
     <SolidColorBrush x:Key="PrimaryBrush" Color="{StaticResource Primary}"/>
     <SolidColorBrush x:Key="SecondaryBrush" Color="{StaticResource Secondary}"/>
     <SolidColorBrush x:Key="TertiaryBrush" Color="{StaticResource Tertiary}"/>
